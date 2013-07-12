@@ -624,4 +624,45 @@ digraph g {
   width=4
   label="MTB_ZIP|<zip_id>zip_id|<zipcode>zipcode|<state>state|<city>city|<town>town}"
  ]
+ dtb_best_products:category_id -> dtb_category:category_id;
+ dtb_best_products:product_id -> dtb_products:product_id;
+ dtb_bloc:bloc_id -> dtb_bloc:device_type_id;
+ dtb_bloc:plugin_id -> dtb_plugin:plugin_id;
+ dtb_blocposition:target_id -> mtb_target:id;
+ dtb_blocposition:bloc_id -> dtb_bloc:device_type_id;
+ dtb_classcategory:class_id -> dtb_class:class_id;
+ dtb_csv:csv_id -> dtb_csv:no;
+ dtb_customer_favorite_products:product_id -> dtb_products:product_id;
+ dtb_deliv:product_type_id -> mtb_product_type:id;
+ dtb_mail_history:order_id -> dtb_order:order_id;
+ dtb_mail_history:template_id -> dtb_templates:template_code;
+ dtb_module_update_logs:module_id -> dtb_module:module_id;
+ dtb_order:order_temp_id -> dtb_order_temp:order_temp_id;
+ dtb_order:customer_id -> dtb_customer:customer_id;
+ dtb_order:deliv_id -> dtb_deliv:deliv_id;
+ dtb_order:payment_id -> dtb_payment:payment_id;
+ dtb_order:device_type_id -> mtb_device_type:id;
+ dtb_order_detail:order_id -> dtb_order:order_id;
+ dtb_order_detail:product_id -> dtb_products:product_id;
+ dtb_order_temp:customer_id -> dtb_customer:customer_id;
+ dtb_order_temp:deliv_id -> dtb_deliv:deliv_id;
+ dtb_order_temp:payment_id -> dtb_payment:payment_id;
+ dtb_order_temp:device_type_id -> mtb_device_type:id;
+ dtb_order_temp:order_id -> dtb_order:order_id;
+ dtb_other_deliv:customer_id -> dtb_customer:customer_id;
+ dtb_payment:module_id -> dtb_module:module_id;
+ dtb_payment_options:payment_id -> dtb_payment:payment_id;
+ dtb_plugin_hookpoint:plugin_id -> dtb_plugin:plugin_id;
+ dtb_product_categories:category_id -> dtb_category:category_id;
+ dtb_product_status:product_id -> dtb_products:product_id;
+ dtb_products:maker_id -> dtb_maker:maker_id;
+ dtb_products_class:product_id -> dtb_products:product_id;
+ dtb_products_class:product_type_id -> mtb_product_type:id;
+ dtb_recommend_products:recommend_product_id -> dtb_recommend_products:product_id;
+ dtb_review:product_id -> dtb_products:product_id;
+ dtb_review:customer_id -> dtb_customer:customer_id;
+ dtb_send_customer:customer_id -> dtb_customer:customer_id;
+ dtb_shipment_item:order_id -> dtb_order:order_id;
+ dtb_shipping:order_id -> dtb_order:order_id;
+ dtb_templates:device_type_id -> mtb_device_type:id;
 }

@@ -4,7 +4,8 @@
 # mysqlviz $Rev: 10 $ / $Date: 2010-11-12 15:53:55 -0800 (Fri, 12 Nov 2010) $
 
 # used for automated guessing of table relationships
-$standard_table_prefixes=array('','tbl','tbl_','table','table_');
+//$standard_table_prefixes=array('','tbl','tbl_','table','table_');
+$standard_table_prefixes=array('','tbl','tbl_','table','table_','dtb_','mtb_');
 $standard_table_suffixes=array('','s','s_table','_table','table');
 
 # command line options
@@ -150,7 +151,10 @@ if(isset($opts['r'])) {
   foreach(array_keys($tables) as $table) {
    foreach(array_keys($tables[$table]['fields']) as $field) {
     # if the column isn't primary key, and ends with '_id' or similar...
-    if($field!=$tables[$table]['pk'] && preg_match('/^(.+)_?id$/i',$field,$matches)) {
+    if(!preg_match('/^(.+)_id$/i',$field,$matches)) {
+        preg_match('/^(.+)id$/i',$field,$matches);
+    }
+    if($field!=$tables[$table]['pk'] && isset($matches[1])) {
      $done=0;
      # loop through common prefixes/suffixes and attempt to auto-match
      for($i=0;$i<count($standard_table_prefixes)&&!$done;$i++) {

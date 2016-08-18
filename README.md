@@ -19,7 +19,11 @@ forked from https://mysqlviz.googlecode.com/files/mysqlviz-0.3.tar.bz2
 ![eccube_db_simple.png](https://qiita-image-store.s3.amazonaws.com/0/25728/174e9860-fb01-c3c7-011c-e110635b0166.png)
 
 ```bash:必要なパッケージ
+#ubuntu/debian linux
 $ sudo apt-get install -y graphviz libgv-php5
+
+#mac osx
+$ brew install graphviz
 ```
 
 ## 使い方
@@ -30,6 +34,7 @@ $ mysqldump -uroot -p -d dbname  > dbname.sql
 
 ```bash:
 dbname="eccube_db" ← dumpファイル名指定
+# コマンドラインからでも可
 ```
 
 * 設定修正（use_original.sh か use_simple.sh）
@@ -40,11 +45,12 @@ $standard_table_prefixes=array('','tbl','tbl_','table','table_','dtb_','mtb_') �
 ```
 
 ```Bash:実行
-$ use_original.sh (オリジナル版。ちょっと手を加えましたが。)
-$ use_simple.sh (シンプル版。)
+$ chmod a+x *.sh
+$ ./use_original.sh [dbname] (オリジナル版。ちょっと手を加えましたが。)
+$ ./use_simple.sh [dbname] (シンプル版。)
 ```
 
-pngファイルが生成されるので御覧ください。
+pdfファイルが生成されるので御覧ください。
 
 ### 参考までに改良前
 

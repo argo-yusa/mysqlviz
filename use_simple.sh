@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-dbname="eccube_db"
+dbname=${1:-"eccube_db"}
 program="mysqlviz_simple"
 
 php $program -f ${dbname}.sql > ${dbname}_simple.dot && \
